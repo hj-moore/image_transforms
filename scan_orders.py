@@ -80,3 +80,15 @@ def orthogonal_scan(img):
         old_row += 4
         old_column = 0
     return(Image.fromarray(new_img))
+
+#opens test images and produces transformations 
+img_one = Image.open("test_4x4.png")
+img_two = Image.open("test_8x8.png")
+
+orthogonal_scan(img_one).save("test_4x4_orthog.png")
+raster_scan(img_one).save("test_4x4_raster.png")
+u_scan(img_one).save("test_4x4_u-scan.png")
+
+orthogonal_scan(img_two).save("test_8x8_orthog.png")
+raster_scan(img_two).save("test_8x8_raster.png")
+u_scan(img_two).save("test_8x8_u-scan.png")
